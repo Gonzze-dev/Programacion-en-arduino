@@ -90,10 +90,10 @@ void seleccionarTodosLosColores(String colores[7])
 
 void seleccionarTodosLosColoresRandom(String colores[7])
 {
-  
-  selectColor(colores[random(0,6)]);
+  byte num_random = random(0,6);
+  selectColor(colores[num_random]);
   delay(1000);
-  lowColor(colores[random(0,6)]);
+  lowColor(colores[num_random]);
 }
 void setup() {
   Serial.begin(9600);
@@ -104,18 +104,10 @@ void setup() {
 
 void loop() 
 {
-  String colores[7];
-  colores[0] = "red";
-  colores[1] = "blue";
-  colores[2] = "green";
-  colores[3] = "purple";
-  colores[4] = "light blue";
-  colores[5] = "yellow";
-  colores[6] = "white";
+  String colores[7] = {"red", "blue", "green", "pruple", "light blue", "yellow", "white"};
 
   seleccionarTodosLosColores(colores);
   delay(2000);
   seleccionarTodosLosColoresRandom(colores);
-  
   
 }
